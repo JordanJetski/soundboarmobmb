@@ -1,0 +1,24 @@
+<div class="board-id">
+	<span class="board-id-label">Board ID</span>
+	<span class="board-id-text">{{board}}</span>
+</div>
+
+<div class="text-center" style="margin: 50px auto; max-width: 600px">
+	<p class="lead">
+		This is a <strong>soundboard</strong> tab. It is connected to the board ID shown at the top.
+	</p>
+	<p>
+		Use the buttons bellow to send sounds to the player tab.
+	</p>
+</div>
+
+<div id="sound-buttons" class="row">
+	{{#each sounds}}
+	<div class="col-sm-4">
+		<button type="button" data-sound="{{id}}" data-stfu="{{stfu}}" class="btn btn-default btn-lg btn-block" style="margin-bottom: 5px;">{{name}}</button>
+	</div>
+	{{/each}}
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/board.js"></script>
